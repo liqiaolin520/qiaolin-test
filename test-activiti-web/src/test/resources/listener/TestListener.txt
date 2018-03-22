@@ -1,0 +1,37 @@
+  ** 因在bpmn文件中配置注释会在拖动节点后被清空,所以此文件用与解释其中配置的含义 **
+  
+  <process id="myProcess" name="My process" isExecutable="true">
+  	
+  	/**
+  	 *	这里配置了属于流程的两个监听器
+  	 *		1、start 这里采用了class配置方式。
+  	 * 		2、end 这里采用了表达式动态设置监听器的方式。
+  	 **/
+    <extensionElements>
+      <activiti:executionListener event="start" class="com.ascendant.activiti.test.listener.ProcessStartListener"></activiti:executionListener>
+      <activiti:executionListener event="end" delegateExpression="${end}"></activiti:executionListener>
+    </extensionElements>
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <userTask id="usertask1" name="测试任务监听器" isForCompensation="true" activiti:assignee="qiaolin" isForCompensation="true">
+    
+      /**
+       *  这里采用了class方式配置任务创建时的监听器,并注入监听器需要的字段content。
+       *	下面还通过注入的方式注入了task这个引擎内置的对象。
+       *	可以通过 setting 方法入参,如果引擎发现没有提供setting 方法,他会通过反射机制来赋值。
+       **/
+      <extensionElements>
+        <activiti:taskListener event="create" class="com.ascendant.activiti.test.listener.CreateTaskListener">
+          <activiti:field name="content">
+            <activiti:string><![CDATA[Hello , ${name}]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="task">
+            <activiti:string><![CDATA[${task}]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>
+        <activiti:taskListener event="assignment" delegateExpression="${assignmentDelegate}"></activiti:taskListener>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="endevent1"></sequenceFlow>
+  </process>

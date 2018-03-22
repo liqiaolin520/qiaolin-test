@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter" lazy-init="true">
+		<description>状态过滤器</description>
+		<property name="slowSqlMillis" value="3000" />
+		<property name="logSlowSql" value="true" />
+		<property name="mergeSql" value="true" />
+	</bean>
+	 
+	<!-- alibaba数据源 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close" init-method="init" lazy-init="true">
+		<property name="name" value="${druid.name}"></property>
+		<property name="url" value="${druid.url}"></property>
+		<property name="driverClassName" value="${druid.driverClassName}"></property>		
+		<property name="username" value="${druid.username}"></property>		
+		<property name="password" value="${druid.password}"></property>		
+		<property name="filters" value="${druid.filters}"></property>		
+		<property name="maxActive" value="${druid.maxActive}"></property>		
+		<property name="initialSize" value="${druid.initialSize}"></property>		
+		<property name="maxWait" value="${druid.maxWait}"></property>		
+		<property name="minIdle" value="${druid.minIdle}"></property>		
+		<property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}"></property>		
+		<property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}"></property>		
+		<property name="validationQuery" value="${druid.validationQuery}"></property>		
+		<property name="testWhileIdle" value="${druid.testWhileIdle}"></property>		
+		<property name="testOnBorrow" value="${druid.testOnBorrow}"></property>		
+		<property name="testOnReturn" value="${druid.testOnReturn}"></property>		
+		<property name="maxOpenPreparedStatements" value="${druid.maxOpenPreparedStatements}"></property>		
+	</bean>
+	
+	<!-- c3p0数据源 -->
+	<bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!-- 配置连接池属性 -->
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/emp" />
+        <property name="user" value="root" />
+        <property name="password" value="hnyszt2016" />
+
+        <!-- c3p0连接池的私有属性 --> 
+        <property name="maxPoolSize" value="30" />
+        <property name="minPoolSize" value="10" />
+        <!-- 关闭连接后不自动commit -->
+        <property name="autoCommitOnClose" value="false" />
+        <!-- 获取连接超时时间 -->
+        <property name="checkoutTimeout" value="10000" />
+        <!-- 当获取连接失败重试次数 -->
+        <property name="acquireRetryAttempts" value="2" />
+    </bean>
+	
+</beans>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- 配置核心操作对象与7大服务接口 -->
+	<!-- 事务 -->
+	<bean id="tx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+		
+	<!-- 加载activiti引擎 -->
+	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+	   <property name="processEngineConfiguration" ref="processEngineConfiguration" />
+	</bean>
+	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+	   <property name="dataSource" ref="dataSource" />
+	   <property name="transactionManager" ref="tx"></property>
+	   <property name="databaseSchemaUpdate" value="true" />
+	   <!-- 定时器服务  默认false ,如需要定时功能，则配置为true -->
+	   <property name="jobExecutorActivate" value="true" />
+	   <!-- 配置 流程图生成的字体，不配置会出现乱码。 -->
+	   <property name="labelFontName" value="宋体"></property>
+	   <property name="activityFontName" value="宋体"></property>
+	   <!-- 配置此配置会在应用启动时自动部署某些项目，使用通配符。 -->
+	   <!--<property name="deploymentResources" value="classpath:processResource/*.bpmn"/> -->
+	   <!-- 自定义的表单类型需要在此注册，不然Activiti引擎会找不到，从而抛出错误 -->
+	   <property name="customFormTypes">
+	       <list>
+	       	<bean class="com.ascendant.activiti.test.form.JavascriptFormType"></bean>
+	       </list>
+	   </property>
+	  <!-- 配置监听器，将监听器交给Spring来代理，可以使监听器不用持久化到数据库，减轻数据库的压力。 -->
+	   <property name="beans">
+	   		<map>
+				<entry key="leaveMailListener">
+					<bean class="com.ascendant.activiti.test.listener.MailListener"></bean>
+				</entry>	   		 
+	   		</map>
+	   </property>
+	   <!-- 配置 邮件服务 -->
+	   <!-- 配置邮件服务地址 -->
+	   <property name="mailServerHost" value="smtp.qq.com"></property>
+	   <!-- 配置邮件服务端口  , 经过我几番测试，发现使用默认25端口加上TLS加密方式通吃发送多种邮件地址
+	   		但是只能通过qq邮箱来发，163不行。SSL方式加密不行。
+	   -->
+	   <property name="mailServerPort" value="25"></property>
+	   <!-- 配置TLS加密 -->
+	   <property name="mailServerUseTLS" value="true"></property>
+		<!-- 对应的账户 -->
+	   <property name="mailServerUsername" value="992004863@qq.com"></property>
+	   <!-- 对应的授权码 -->
+	   <property name="mailServerPassword" value="rkbrssaprarpbcda"></property>
+	</bean>
+	
+	<!-- 七大服务接口 -->
+	<bean id="RuntimeService" factory-bean="processEngine" factory-method="getRuntimeService"></bean>
+	<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"></bean>
+	<bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService"></bean>
+	<bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"></bean>
+	<bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"></bean>
+	<bean id="managementService" factory-bean="processEngine" factory-method="getManagementService"></bean>
+	<bean id="formService" factory-bean="processEngine" factory-method="getFormService"></bean>
+	
+		
+</beans>

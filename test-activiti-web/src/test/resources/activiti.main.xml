@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!-- 配置数据源 -->
+	<bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+		<property name="jdbcDriver" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/activiti2?useUnicode=true&amp;characterEncoding=utf8"></property>
+		<property name="jdbcUsername" value="root"></property>
+		<property name="jdbcPassword" value="hnyszt2016"></property>
+		<property name="databaseSchemaUpdate" value="false"></property>
+		<!-- 邮件的地址 -->
+		<property name="mailServerHost" value="smtp.163.com"></property>
+		<!-- 是否启用SSL加密邮件 -->
+		<!-- <property name="mailServerUseSSL" value="true"></property> -->
+		<!-- 邮件smtp协议的端口 -->				   
+		<property name="mailServerPort" value="25"></property>
+		<property name="mailServerUseTLS" value="true"></property>
+		<!-- 账户 -->
+		<property name="mailServerUsername" value="15273153835@163.com"></property>
+		<!-- 密码 -->
+		<property name="mailServerPassword" value="liqiaolin5200"></property>
+	</bean>
+	
+	<!-- 
+		使用qq的邮箱服务不行，现在改为163邮箱测试。
+	 -->
+	
+	
+	
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="process" isExecutable="true">
+    <startEvent id="start" name="流程启动"></startEvent>
+    <userTask id="leave" name="部门领导审批" activiti:assignee="kermit"></userTask>
+    <sequenceFlow id="sid-37A43F2E-07FC-4BCF-BAD9-8F89F4033DC8" sourceRef="start" targetRef="leave"></sequenceFlow>
+    <endEvent id="end" name="流程结束"></endEvent>
+    <sequenceFlow id="sid-9711BEAA-3A3C-4CF4-99D8-E8985FFA8D96" sourceRef="leave" targetRef="end"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_process">
+    <bpmndi:BPMNPlane bpmnElement="process" id="BPMNPlane_process">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="35.0" width="35.0" x="165.0" y="105.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="leave" id="BPMNShape_leave">
+        <omgdc:Bounds height="80.0" width="100.0" x="240.0" y="83.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="35.0" width="35.0" x="385.0" y="106.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-37A43F2E-07FC-4BCF-BAD9-8F89F4033DC8" id="BPMNEdge_sid-37A43F2E-07FC-4BCF-BAD9-8F89F4033DC8">
+        <omgdi:waypoint x="200.0" y="122.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="123.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-9711BEAA-3A3C-4CF4-99D8-E8985FFA8D96" id="BPMNEdge_sid-9711BEAA-3A3C-4CF4-99D8-E8985FFA8D96">
+        <omgdi:waypoint x="340.0" y="123.0"></omgdi:waypoint>
+        <omgdi:waypoint x="385.0" y="123.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
