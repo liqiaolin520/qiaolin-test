@@ -20,4 +20,16 @@
         </dependency>
     </dependencies>
 
+
+    <build>
+        <finalName>test-springboot</finalName>
+        <plugins>
+            <!-- spring boot 打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

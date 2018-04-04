@@ -12,6 +12,7 @@
   	<module>test-shiro</module>
   	<module>test-spring-annotation</module>
   	<module>test-ftp</module>
+  	<module>test-javadoc</module>
   </modules>
   
   	<properties>
