@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>indi.qiaolin.test.interfaces.with.baseclass.inter.ElectricFan</OriginalElement>
+  <nodes>
+    <node x="0.0" y="249.0">indi.qiaolin.test.interfaces.with.baseclass.inter.MechanicalOperation</node>
+    <node x="157.0" y="127.0">indi.qiaolin.test.interfaces.with.baseclass.inter.Television</node>
+    <node x="314.0" y="127.0">indi.qiaolin.test.interfaces.with.baseclass.inter.ElectricFan</node>
+    <node x="0.0" y="127.0">indi.qiaolin.test.interfaces.with.baseclass.inter.Punch</node>
+    <node x="157.0" y="0.0">indi.qiaolin.test.interfaces.with.baseclass.inter.Mechanical</node>
+    <node x="0.0" y="371.0">indi.qiaolin.test.interfaces.with.baseclass.inter.TestInter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.inter.Punch" target="indi.qiaolin.test.interfaces.with.baseclass.inter.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="68.5" y="102.0" />
+      <point x="179.83333333333334" y="102.0" />
+      <point x="-45.666666666666664" y="38.5" />
+    </edge>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.inter.ElectricFan" target="indi.qiaolin.test.interfaces.with.baseclass.inter.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="382.5" y="102.0" />
+      <point x="271.16666666666663" y="102.0" />
+      <point x="45.66666666666666" y="38.5" />
+    </edge>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.inter.Television" target="indi.qiaolin.test.interfaces.with.baseclass.inter.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="171.5" y="134.5" />
+  <SelectedNodes>
+    <node>indi.qiaolin.test.interfaces.with.baseclass.inter.ElectricFan</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

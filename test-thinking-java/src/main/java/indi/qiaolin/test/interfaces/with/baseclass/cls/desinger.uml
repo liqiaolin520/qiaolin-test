@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-317.0" y="121.0">indi.qiaolin.test.interfaces.with.baseclass.cls.MechanicalOperation</node>
+    <node x="-160.0" y="-128.0">indi.qiaolin.test.interfaces.with.baseclass.cls.Mechanical</node>
+    <node x="-295.0" y="244.0">indi.qiaolin.test.interfaces.with.baseclass.cls.TestCls</node>
+    <node x="-160.0" y="-1.0">indi.qiaolin.test.interfaces.with.baseclass.cls.Television</node>
+    <node x="-3.0" y="-1.0">indi.qiaolin.test.interfaces.with.baseclass.cls.Punch</node>
+    <node x="-317.0" y="-1.0">indi.qiaolin.test.interfaces.with.baseclass.cls.ElectricFan</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.cls.ElectricFan" target="indi.qiaolin.test.interfaces.with.baseclass.cls.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="-248.5" y="-26.0" />
+      <point x="-137.16666666666666" y="-26.0" />
+      <point x="-45.66666666666666" y="38.5" />
+    </edge>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.cls.Television" target="indi.qiaolin.test.interfaces.with.baseclass.cls.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="indi.qiaolin.test.interfaces.with.baseclass.cls.Punch" target="indi.qiaolin.test.interfaces.with.baseclass.cls.Mechanical">
+      <point x="0.0" y="-38.5" />
+      <point x="65.5" y="-26.0" />
+      <point x="-45.83333333333337" y="-26.0" />
+      <point x="45.66666666666663" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="147.5" y="133.5" />
+  <SelectedNodes>
+    <node>indi.qiaolin.test.interfaces.with.baseclass.cls.TestCls</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -13,6 +13,7 @@
   	<module>test-spring-annotation</module>
   	<module>test-ftp</module>
   	<module>test-javadoc</module>
+  	<module>test-thinking-java</module>
   </modules>
   
   	<properties>
