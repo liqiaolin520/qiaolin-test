@@ -29,10 +29,8 @@
       <point x="45.66666666666663" y="38.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="147.5" y="133.5" />
-  <SelectedNodes>
-    <node>indi.qiaolin.test.interfaces.with.baseclass.cls.TestCls</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="1.0" x="148.0" y="134.0" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Inner Classes</Category>
